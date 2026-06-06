@@ -2,6 +2,8 @@
 // RESET GAME
 // ==========================================================
 void resetGame() {
+    srand((unsigned int)time(NULL));
+
     posX = 0.0f;
     posY = 1.25f;
     posZ = 0.0f;
@@ -11,9 +13,7 @@ void resetGame() {
     walkAnim = 0.0f;
     gameStatus = PLAYING;
 
-    stage[2].y = 2.2f;
-    stage[3].y = 3.8f;
-    stage[7].y = 7.0f;
+    generatePlatforms();
 
     glutPostRedisplay();
 }
